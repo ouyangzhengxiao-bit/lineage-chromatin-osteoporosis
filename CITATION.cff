@@ -3,7 +3,8 @@ message: "If you use this software or source data, please cite the archived rele
 title: "Analysis code and source data for human lineage-associated chromatin remodeling in osteoporosis"
 type: software
 version: 1.0.0
-date-released: 2026-08-08
+date-released: 2026-08-09
+doi: "10.5281/zenodo.21856117"
 authors:
   - family-names: Tan
     given-names: Tingting
@@ -19,4 +20,3 @@ keywords:
   - single-cell transcriptomics
   - multi-omics
 license: MIT
-

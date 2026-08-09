@@ -1,5 +1,7 @@
 # Human lineage-associated chromatin remodeling in osteoporosis
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21856116.svg)](https://doi.org/10.5281/zenodo.21856116)
+
 Reproducibility repository for the manuscript **“Human Lineage-Associated Chromatin Compartment Remodeling Prioritizes Osteoporosis Regulators.”**
 
 The study integrates lineage-resolved chromatin compartments with skeletal single-cell transcriptomics, histone-mark profiles, bone-mineral-density genetic annotations, and serum proteomic evidence. The repository contains the analysis and figure-generation code, panel-level source data, supplementary tables, and frozen environment specifications used for the submitted version.
@@ -34,7 +36,7 @@ See [`REPRODUCE.md`](REPRODUCE.md) for the required inputs and commands.
 
 ## Citation
 
-Please cite the version-specific Zenodo DOI for the release used. The DOI will be added after the first archived release is created.
+Please cite the version-specific DOI for release v1.0.0: [10.5281/zenodo.21856117](https://doi.org/10.5281/zenodo.21856117). The concept DOI [10.5281/zenodo.21856116](https://doi.org/10.5281/zenodo.21856116) always resolves to the latest archived release.
 
 ## Authors
 
@@ -44,4 +46,3 @@ Please cite the version-specific Zenodo DOI for the release used. The DOI will b
 ## Licensing
 
 The analysis code is distributed under the MIT License. Data files and derived tables are described in [`DATA_LICENSE.md`](DATA_LICENSE.md); underlying third-party datasets remain governed by their original access and reuse terms.
-
