@@ -1,0 +1,28 @@
+{
+  "title": "Analysis code and source data for human lineage-associated chromatin remodeling in osteoporosis",
+  "upload_type": "software",
+  "description": "Versioned analysis code, panel-level source data, supplementary tables, and environment specifications for a lineage-resolved 3D-genomics study of osteoporosis regulator prioritization.",
+  "creators": [
+    {
+      "name": "Tan, Tingting",
+      "affiliation": "Central South University"
+    },
+    {
+      "name": "Ouyang, Zhengxiao",
+      "affiliation": "Central South University",
+      "orcid": "0000-0002-8997-0446"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "osteoporosis",
+    "3D genome",
+    "chromatin compartment",
+    "mesenchymal stromal cell",
+    "single-cell transcriptomics",
+    "multi-omics"
+  ]
+}
+

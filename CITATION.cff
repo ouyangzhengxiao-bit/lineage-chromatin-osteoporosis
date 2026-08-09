@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software or source data, please cite the archived release and associated manuscript."
+title: "Analysis code and source data for human lineage-associated chromatin remodeling in osteoporosis"
+type: software
+version: 1.0.0
+date-released: 2026-08-08
+authors:
+  - family-names: Tan
+    given-names: Tingting
+  - family-names: Ouyang
+    given-names: Zhengxiao
+    orcid: "https://orcid.org/0000-0002-8997-0446"
+repository-code: "https://github.com/ouyangzhengxiao-bit/lineage-chromatin-osteoporosis"
+keywords:
+  - osteoporosis
+  - 3D genome
+  - chromatin compartment
+  - mesenchymal stromal cell
+  - single-cell transcriptomics
+  - multi-omics
+license: MIT
+
