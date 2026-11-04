@@ -2,7 +2,9 @@
   "title": "Mesenchymal lineage chromatin-compartment reproducibility analysis",
   "description": "Scripts, derived results, supporting tables, and figures for a cross-dataset analysis of mesenchymal lineage chromatin-compartment remodeling and its relationship to estimated bone mineral density loci.",
   "upload_type": "software",
+  "access_right": "open",
   "license": "MIT",
+  "version": "2.0.0",
   "creators": [
     {
       "name": "Tan, Tingting"
