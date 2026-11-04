@@ -1,54 +1,29 @@
-# Reproducibility instructions
+# Reproduction notes
 
-The submission package contains panel-level source data but does not duplicate
-the large public h5ad and multiresolution Hi-C matrices. Download or generate
-those inputs from the accessions listed in the manuscript.
+## Public inputs
 
-## Environment
+- GSE151319/SRP260624: primary in situ Hi-C libraries.
+- GSE160394: processed 1-Mb A/B compartment bedGraph files (`GSM4872656`, `GSM4872657`, and `GSM4872658`).
+- Morris et al. 2019 supplementary workbook: Tables 2 and 6 supply the complete eBMD signals used here.
+- GENCODE v49 GRCh38 annotation.
+- UCSC `hg19ToHg38.over.chain.gz` for coordinate conversion.
+- Gene Ontology gene sets for GO:0001501, GO:0001503, GO:0045444, and GO:0048762.
 
-Create the Python environment from `environment.yml`. The R figure script was
-audited with the versions in `R_SESSION_REQUIREMENTS.txt`.
+## Software
 
-## Required input locations
+Python 3 with pandas, NumPy, SciPy, matplotlib, openpyxl, python-docx, and pyliftover; R with the packages imported by `export_prespecified_go_gene_sets.R` and `run_unbiased_pathway_enrichment.R`.
 
-Set paths explicitly; no script depends on the original author's home or
-external-drive layout.
+## Fixed analysis choices
 
-```bash
-export EXTERNAL_HIC_WORK=/path/to/work
-export GSE317068_H5AD=/path/to/gse317068_processed.h5ad
-export HIC_MCOOL_ROOT=/path/to/hic_output
-export HIC_E1_GROUP_TABLE=/path/to/group_compartment_comparison.csv
-export HIC_GC_TRACK=/path/to/hg38_160kb_gc_track.tsv
-```
+- Primary compartment bins: 160 kb.
+- Cross-dataset comparison bins: 1 Mb.
+- Circular-shift permutations: 20,000.
+- GO tests seed: 20261104.
+- eBMD and cross-dataset tests seed: 20261105.
+- Empirical upper-tail P value: `(1 + count(null >= observed)) / 20001`.
 
-`HIC_MCOOL_ROOT` must contain `SAMPLE/SAMPLE.mcool` for hMSC_rep1–7,
-AC_rep1–6, OB_rep1, and OB_rep6.
+Circular shifts are restricted to the chromosome-specific analyzable-bin universe. Missing values remain missing and are not treated as zero.
 
-## Figure and audit commands
+## Release check
 
-```bash
-python Code/run_external_hic_eigs.py \
-  --hic-root "$HIC_MCOOL_ROOT" \
-  --gc-track "$HIC_GC_TRACK" \
-  --out "$EXTERNAL_HIC_WORK/external_validation_160kb/eigs"
-python Code/analyze_external_hic.py
-python Code/make_singlecell_figure.py
-python Code/make_hic_contact_figure.py
-python Code/make_external_validation_figure.py
-python Code/rebuild_3d_ors_coverage_aware.py \
-  --scores Supplementary/Supplementary_Table_2_3D_ORS_scores.csv \
-  --h5ad "$GSE317068_H5AD"
-python Code/audit_3d_ors_robustness.py \
-  --scores Supplementary/Supplementary_Table_2_3D_ORS_scores.csv
-Rscript Code/make_core_figures.R
-python Code/make_graphical_abstract.py
-python Code/freeze_curated_bone_locus_set.py \
-  --loci "$EXTERNAL_HIC_WORK/external_validation_160kb/analysis/curated_gwas_loci_external_switch_overlap.csv" \
-  --comparison "$EXTERNAL_HIC_WORK/external_validation_160kb/analysis/group_compartment_comparison.csv"
-```
-
-The packaged Figure 3 and core-figure scripts read only `Source_Data`. Raw Hi-C
-reprocessing commands above are optional audit steps for regenerating those
-source tables. The Hi-C locus script requires balanced 20-kb matrices and terminates if
-balanced retrieval fails. It does not silently substitute unbalanced contacts.
+Before creating the Zenodo version, run every script against the public inputs, verify that the key values in the repository README match the CSV results, and replace all provisional archive language in the manuscript with the version-specific DOI.

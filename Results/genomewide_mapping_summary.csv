@@ -1,0 +1,7 @@
+metric,value
+tested_bins_with_consensus_states,12608
+selected_opposite_state_effect_bins,777
+protein_coding_genes_in_tested_bins,15601
+protein_coding_genes_in_selected_bins,638
+protein_coding_genes_A_to_B,486
+protein_coding_genes_B_to_A,152

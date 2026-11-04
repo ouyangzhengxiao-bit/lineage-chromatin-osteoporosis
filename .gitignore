@@ -1,8 +1,9 @@
+Reference_Data/
+__pycache__/
+*.pyc
 .DS_Store
 ._*
 __MACOSX/
-*.pyc
-__pycache__/
 .Rhistory
 .RData
 .ipynb_checkpoints/
@@ -10,4 +11,3 @@ work/
 *.h5ad
 *.mcool
 *.cool
-

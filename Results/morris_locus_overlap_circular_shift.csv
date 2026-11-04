@@ -1,0 +1,3 @@
+annotation,tested_bins,selected_bins,GWAS_annotated_tested_bins,observed_selected_GWAS_bins,null_mean,null_2.5_percentile,null_97.5_percentile,fold_over_null,empirical_p,permutations,seed,BH_FDR_across_2_tests
+direct_signal_containing_160kb_bin,12608,777,741,29,44.5701,32.0,58.0,0.6507,0.9941002949852508,20000,20261105,0.9941002949852508
+within_500kb_of_conditionally_independent_signal,12608,777,3713,185,220.6379,183.97500000000002,259.0,0.8385,0.9716514174291285,20000,20261105,0.9941002949852508

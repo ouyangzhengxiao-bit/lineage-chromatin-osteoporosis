@@ -1,0 +1,7 @@
+pandas
+numpy
+scipy
+matplotlib
+openpyxl
+python-docx
+pyliftover==0.4.1

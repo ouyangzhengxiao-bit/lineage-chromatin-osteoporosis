@@ -1,28 +1,23 @@
 {
-  "title": "Analysis code and source data for human lineage-associated chromatin remodeling in osteoporosis",
+  "title": "Mesenchymal lineage chromatin-compartment reproducibility analysis",
+  "description": "Scripts, derived results, supporting tables, and figures for a cross-dataset analysis of mesenchymal lineage chromatin-compartment remodeling and its relationship to estimated bone mineral density loci.",
   "upload_type": "software",
-  "description": "Versioned analysis code, panel-level source data, supplementary tables, and environment specifications for a lineage-resolved 3D-genomics study of osteoporosis regulator prioritization.",
+  "license": "MIT",
   "creators": [
     {
-      "name": "Tan, Tingting",
-      "affiliation": "Central South University"
+      "name": "Tan, Tingting"
     },
     {
       "name": "Ouyang, Zhengxiao",
-      "affiliation": "Central South University",
       "orcid": "0000-0002-8997-0446"
     }
   ],
-  "access_right": "open",
-  "license": "MIT",
-  "version": "1.0.0",
   "keywords": [
-    "osteoporosis",
-    "3D genome",
+    "three-dimensional genome",
+    "Hi-C",
     "chromatin compartment",
-    "mesenchymal stromal cell",
-    "single-cell transcriptomics",
-    "multi-omics"
+    "osteoporosis",
+    "reproducibility",
+    "bone mineral density"
   ]
 }
-

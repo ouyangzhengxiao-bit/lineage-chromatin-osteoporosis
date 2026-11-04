@@ -1,0 +1,7 @@
+metric,value
+signals_total,1106
+loci_total,518
+signals_uniquely_lifted,1106
+tested_bins,12608
+selected_bins,777
+unique_loci_with_signal_directly_in_selected_bin,22

@@ -1,48 +1,42 @@
-# Human lineage-associated chromatin remodeling in osteoporosis
+# Mesenchymal lineage chromatin-compartment reproducibility analysis
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21856116.svg)](https://doi.org/10.5281/zenodo.21856116)
+This repository release supports the reframed manuscript, “Cross-dataset reproducibility of mesenchymal lineage chromatin compartment remodeling and its relationship to bone mineral density loci.” It replaces the earlier candidate-prioritization interpretation with prespecified, genome-wide reproducibility and overlap tests.
 
-Reproducibility repository for the manuscript **“Human Lineage-Associated Chromatin Compartment Remodeling Prioritizes Osteoporosis Regulators.”**
+## Main findings reproduced here
 
-The study integrates lineage-resolved chromatin compartments with skeletal single-cell transcriptomics, histone-mark profiles, bone-mineral-density genetic annotations, and serum proteomic evidence. The repository contains the analysis and figure-generation code, panel-level source data, supplementary tables, and frozen environment specifications used for the submitted version.
+- Fifteen retained GSE151319/SRP260624 in situ Hi-C libraries yielded 12,608 analyzable 160-kb bins and 777 hMSC–adipocyte opposite-state, effect-filtered differences.
+- Of 361 primary 1-Mb switches with external coverage, 107 were also classified as switches in GSE160394 and 55 had concordant direction.
+- Continuous cross-dataset compartment changes had Spearman rho = -0.0701; regional switch overlap was 111 observed versus a circular-shift mean of 96.709 (empirical P = 0.1777).
+- Complete Morris et al. eBMD signals were not enriched in the selected compartment-difference bins: 29 direct overlaps versus a circular-shift mean of 44.5701 (empirical P = 0.9941).
+- None of 12 prespecified direction-by-process tests survived multiple-testing correction (all FDR at least 0.9965).
 
-## Main findings represented in this release
+These results support a descriptive lineage-associated chromatin-compartment map but do not establish population-level association, causal gene assignment, or clinical prediction.
 
-- 777 prespecified adipocyte-versus-human-mesenchymal-stromal-cell compartment differences in the independent Hi-C series.
-- 12 of 60 curated bone-related loci near these differences, corresponding to a 2.21-fold conditional enrichment over chromosome-wise circular shifts.
-- 91 predefined candidate genes, including 76 with at least four measured evidence layers and 11 strict five-layer candidates.
-- Coverage-aware prioritization of complementary candidate groups led by TNFRSF11B, COL1A2, SATB2, TWIST1, WLS, SFRP4, SPP1, BGLAP, COL1A1, and BMP4.
+## Directory structure
 
-## Repository structure
+- `Code/`: scripts for coordinate mapping, independent Hi-C comparison, circular-shift tests, figures, and manuscript generation.
+- `Results/`: complete derived CSV outputs from the reframed analyses.
+- `Source_Data/`: the eight supporting-information tables submitted with the manuscript.
+- `Figures/`: PDF and PNG versions of Figures 1–4.
+- `Reference_Data/`: local-only public inputs downloaded by the user; ignored by Git because the source archives are large or maintained by the original repositories.
 
-- `Code/` — analysis, audit, source-data export, and figure-generation scripts.
-- `Source_Data/` — panel-level source tables used to regenerate the principal displays.
-- `Supplementary/` — machine-readable supplementary tables and external Hi-C audit outputs.
-- `environment.yml` — frozen Python/Conda environment.
-- `R_SESSION_REQUIREMENTS.txt` — R version and package requirements.
-- `REPRODUCE.md` — command-level reproduction guide.
-- `CITATION.cff` — machine-readable software citation metadata.
+## Reproduction order
 
-Large public input matrices are not duplicated. Retrieve them from the accessions documented in the manuscript: GSE160394, GSE151315, GSE151319/GSE151324, GSE317068, GSE194122, and SRP260624. UK Biobank genetic and proteomic data remain subject to approved-access terms.
+1. `map_switch_bins_to_genes.py`
+2. `compare_independent_hic_datasets.py`
+3. `test_complete_morris_loci_overlap.py`
+4. `export_prespecified_go_gene_sets.R`
+5. `test_prespecified_processes_by_circular_shift.py`
+6. `make_reframed_figures.py`
 
-## Environment
+The scripts expect the public source datasets and reference files described in `REPRODUCE.md`. Large public input files are not duplicated in this release.
 
-```bash
-conda env create -f environment.yml
-conda activate 3d-osteoporosis-reproducibility
-```
+`Fig3b_replicate_correlations.csv` and `Fig3c_pca_scores.csv` are retained in `Source_Data/` as figure-source tables in addition to the eight numbered supporting-information files.
 
-See [`REPRODUCE.md`](REPRODUCE.md) for the required inputs and commands.
+## Scope change from the earlier release
 
-## Citation
+The 60-gene curated enrichment, 52-gene proximity screen, 91-gene multi-layer score, proteomic and ligand–receptor extensions, hematopoietic multiome comparison, and RSPO3 validation claim are not part of the revised evidence chain. Old outputs should not be cited as results of the reframed manuscript.
 
-Please cite the version-specific DOI for release v1.0.0: [10.5281/zenodo.21856117](https://doi.org/10.5281/zenodo.21856117). The concept DOI [10.5281/zenodo.21856116](https://doi.org/10.5281/zenodo.21856116) always resolves to the latest archived release.
+## License and citation
 
-## Authors
-
-- Tingting Tan, MD
-- Zhengxiao Ouyang, MD, PhD
-
-## Licensing
-
-The analysis code is distributed under the MIT License. Data files and derived tables are described in [`DATA_LICENSE.md`](DATA_LICENSE.md); underlying third-party datasets remain governed by their original access and reuse terms.
+Code is released under the MIT License. Public source datasets remain subject to their original terms. A version-specific Zenodo DOI should be inserted here and in `CITATION.cff` after the revised GitHub release is archived.
