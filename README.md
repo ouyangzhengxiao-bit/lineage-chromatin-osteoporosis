@@ -1,5 +1,7 @@
 # Mesenchymal lineage chromatin-compartment reproducibility analysis
 
+Version 2.0.0 is permanently archived at [Zenodo](https://doi.org/10.5281/zenodo.23969522).
+
 This repository release supports the reframed manuscript, “Cross-dataset reproducibility of mesenchymal lineage chromatin compartment remodeling and its relationship to bone mineral density loci.” It replaces the earlier candidate-prioritization interpretation with prespecified, genome-wide reproducibility and overlap tests.
 
 ## Main findings reproduced here
@@ -39,4 +41,4 @@ The 60-gene curated enrichment, 52-gene proximity screen, 91-gene multi-layer sc
 
 ## License and citation
 
-Code is released under the MIT License. Public source datasets remain subject to their original terms. A version-specific Zenodo DOI should be inserted here and in `CITATION.cff` after the revised GitHub release is archived.
+Code is released under the MIT License. Public source datasets remain subject to their original terms. Cite the version-specific archive DOI `10.5281/zenodo.23969522` when using this release.

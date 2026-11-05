@@ -4,6 +4,7 @@ title: "Mesenchymal lineage chromatin-compartment reproducibility analysis"
 type: software
 version: 2.0.0
 date-released: 2026-11-05
+doi: "10.5281/zenodo.23969522"
 authors:
   - family-names: Tan
     given-names: Tingting
